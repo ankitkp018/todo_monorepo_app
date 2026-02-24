@@ -1,29 +1,32 @@
-#Angular Monorepo App
+## Angular Monorepo App
 
-This repository contains an Angular CLI monorepo workspace with multiple applications and shared libraries.
+This repository contains an **Angular CLI monorepo** workspace with multiple applications and shared libraries.
 The workspace demonstrates clean architecture, state management, internationalization, authentication flow, and UI design using Angular best practices.
 
-#Project Structure
+---
 
+## Project Structure
+
+```text
 todo-monorepo-workspace/
-│ 
 ├── projects/ 
-│   └──login-app     # Login application 
-│   └── todo-app     # TODO application (protected) 
-│   └── core         # Core services (Auth, Storage, Guards) 
-│   └── ui           # Reusable UI components 
-│   └── data-access  # Models, NgRx store, state logic 
-│ 
-├── angular.json 
-├── package.json 
-└── README.md
+│   ├── login-app      # Dedicated entry point for user authentication
+│   ├── todo-app       # Main task management dashboard (Protected)
+│   ├── core           # Shared: Auth, Storage, and Routing Guards
+│   ├── ui             # Shared: Reusable, stateless UI components
+│   └── data-access    # Shared: Models, NgRx Store, and State logic
+├── angular.json       # Workspace configuration
+├── package.json       # Dependencies and automation scripts
+└── README.md          # Documentation
 
-#Applications Overview
+---
+
+Angular Monorepo App
 
 1) Login App (login-app)
   Dedicated login application
   Uses hardcoded credentials for demo purposes
-  Provides authentication entry point
+  Provides an authentication entry point
   Redirects authenticated users to the TODO app
 
 2) TODO App (todo-app)
@@ -40,7 +43,7 @@ todo-monorepo-workspace/
       -Internationalization support (English, Hindi, Spanish)
       -Structured table-based UI with a fixed header
 
-#Shared Libraries 
+Shared Libraries 
 
 1) Core Library (libs/core)
   Contains cross-application services:
@@ -53,7 +56,7 @@ todo-monorepo-workspace/
    Contains TodoListComponent
    Styled using plain SCSS
 
-3)Data Access Library (libs/data-access)
+3) Data Access Library (libs/data-access)
   Centralized domain logic
   Task model
   NgRx store:
@@ -62,7 +65,7 @@ todo-monorepo-workspace/
       -Selectors
   Ensures separation of UI and state logic  
 
-#Technology Stack
+Technology Stack
 
 Angular 14
 NgRx 14 (State Management)
@@ -101,7 +104,7 @@ Running the Applications
   -ng serve login-app --port 4201    
   
 
-#Internationalization
+Internationalization
 
 Implemented using @ngx-translate/core.
 Supported languages:
@@ -115,7 +118,7 @@ Translation files are stored under:
 Language switching happens at runtime without a page reload
 
 
-#Authentication Flow
+Authentication Flow
 
 Since browsers' scope storage per origin, the following flow is used:
   1) User logs in via login-app
@@ -123,9 +126,8 @@ Since browsers' scope storage per origin, the following flow is used:
   3) todo-app stores authentication state locally
   4) AuthGuard protects all routes
   5) Logout clears the authentication state and redirects back to the login-app
-  6) 
 
-#State Management (NgRx Overview)
+State Management (NgRx Overview)
 
 NgRx is used to manage the TODO state:
   -Actions:– Add, Update, Toggle, Delete tasks
@@ -136,7 +138,7 @@ NgRx is used to manage the TODO state:
 The UI components remain stateless and interact with the store via dispatched actions.   
 
 
-#Design & Architecture Principles
+Design & Architecture Principles
 
 Angular CLI monorepo (native support)
 Separation of concerns
@@ -144,5 +146,3 @@ Reusable shared libraries
 Component-driven UI
 Stateless UI + centralized state
 Clean SCSS styling
-
-
