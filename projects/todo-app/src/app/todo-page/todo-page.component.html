@@ -1,0 +1,25 @@
+
+<header class="app-header">
+  <h1>{{ 'TITLE' | translate }}</h1>
+  <div class="language-switch">
+    <button class="lang-btn" (click)="changeLanguage('en')">EN</button>
+    <button class="lang-btn" (click)="changeLanguage('hi')">हिं</button>
+    <button class="lang-btn" (click)="changeLanguage('es')">ES</button>
+  </div>
+  <button class="btn btn-logout logout-btn" (click)="logout()">
+      Logout
+    </button>
+</header>
+<div class="app-container">
+  <div class="add-task">
+    <input type="text" [(ngModel)]="newTaskTitle" [placeholder]="'PLACEHOLDER' | translate" />
+
+
+    <button class="btn btn-add" (click)="addTask()">
+      {{ 'ADD' | translate }}
+    </button>
+  </div>
+
+  <ui-todo-list [tasks]="(tasks$ | async) || []" (toggle)="toggleTask($event)" (delete)="deleteTask($event)"
+    (edit)="editTask($event)"></ui-todo-list>
+</div>  

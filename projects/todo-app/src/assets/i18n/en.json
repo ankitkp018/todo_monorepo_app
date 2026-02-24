@@ -1,0 +1,11 @@
+{
+  "TITLE": "TODO App",
+  "PLACEHOLDER": "Enter new task",
+  "ADD": "Add",
+  "EDIT": "Edit",
+  "DELETE": "Delete",
+  "SAVE": "Save",
+  "CANCEL": "Cancel",
+  "COMPLETE": "Complete",
+  "UNDO": "Undo"
+}

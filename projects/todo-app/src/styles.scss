@@ -1,0 +1,95 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 14px 20px;
+  background-color: #1976d2;
+  color: #fff;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.add-task {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.btn-add {
+  background-color: #388e3c; // green
+  color: #fff;
+  min-width: 90px;
+}
+
+.language-switch {
+  position: absolute;
+  right: 90px;  
+  display: flex;
+  gap: 8px;
+}
+
+
+.lang-btn {
+  width: 44px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #455a64; // blue-grey
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.lang-btn:hover {
+  opacity: 0.9;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+
+.header-actions {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-logout {
+  background-color: #e20b0b; // blue-grey
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn-logout:hover {
+  opacity: 0.9;
+}
+
+
+/* Logout at extreme right */
+.logout-btn {
+  position: absolute;
+  right: 20px;
+}

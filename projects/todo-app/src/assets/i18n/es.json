@@ -1,0 +1,11 @@
+{
+  "TITLE": "Lista de Tareas",
+  "PLACEHOLDER": "Ingrese una nueva tarea",
+  "ADD": "Agregar",
+  "EDIT": "Editar",
+  "DELETE": "Eliminar",
+  "SAVE": "Guardar",
+  "CANCEL": "Cancelar",
+  "COMPLETE": "Completar",
+  "UNDO": "Deshacer"
+}

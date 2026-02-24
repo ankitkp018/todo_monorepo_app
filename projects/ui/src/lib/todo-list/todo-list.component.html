@@ -1,0 +1,65 @@
+<table class="task-table">
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Status</th>
+      <th style="width: 220px;">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <!-- Task title -->
+      <td>
+        <ng-container *ngIf="editingId !== task.id; else editMode">
+          <span [class.completed]="task.completed">
+            {{ task.title }}
+          </span>
+        </ng-container>
+
+        <ng-template #editMode>
+          <input
+            class="edit-input"
+            [(ngModel)]="editedTitle"
+          />
+        </ng-template>
+      </td>
+
+      <!-- Status -->
+      <td>
+        {{ task.completed ? ('COMPLETE' | translate) : 'Pending' }}
+      </td>
+
+      <!-- Actions -->
+      <td class="actions">
+        <ng-container *ngIf="editingId !== task.id">
+          <button
+            class="btn btn-complete"
+            [class.undo]="task.completed"
+            (click)="toggle.emit(task.id)"
+          >
+            {{ task.completed ? ('UNDO' | translate) : ('COMPLETE' | translate) }}
+          </button>
+
+          <button class="btn btn-edit" (click)="startEdit(task)">
+            {{ 'EDIT' | translate }}
+          </button>
+
+          <button class="btn btn-delete" (click)="delete.emit(task.id)">
+            {{ 'DELETE' | translate }}
+          </button>
+        </ng-container>
+
+        <ng-container *ngIf="editingId === task.id">
+          <button class="btn btn-save" (click)="saveEdit(task.id)">
+            {{ 'SAVE' | translate }}
+          </button>
+
+          <button class="btn btn-cancel" (click)="cancelEdit()">
+            {{ 'CANCEL' | translate }}
+          </button>
+        </ng-container>
+      </td>
+    </tr>
+  </tbody>
+</table>
