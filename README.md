@@ -63,6 +63,7 @@ todo-monorepo-workspace/
   Ensures separation of UI and state logic  
 
 #Technology Stack
+
 Angular 14
 NgRx 14 (State Management)
 ngx-translate (Internationalization/Localization)
@@ -72,6 +73,7 @@ RxJS
 Browser Local Storage 
 
 #Setup & Installation 
+
 Prerequisites:
   -Node.js v16.x (recommended)
   -Angular CLI v14.x
@@ -97,6 +99,7 @@ Running the Applications
   -ng serve todo-app --port 4200
   Start Login App
   -ng serve login-app --port 4201    
+  
 
 #Internationalization
 
@@ -109,7 +112,8 @@ Supported languages:
 Translation files are stored under:
 "apps/todo-app/src/assets/i18n/"      
 
-Language switching happens at runtime without page reload
+Language switching happens at runtime without a page reload
+
 
 #Authentication Flow
 
@@ -119,6 +123,7 @@ Since browsers' scope storage per origin, the following flow is used:
   3) todo-app stores authentication state locally
   4) AuthGuard protects all routes
   5) Logout clears the authentication state and redirects back to the login-app
+  6) 
 
 #State Management (NgRx Overview)
 
@@ -129,6 +134,7 @@ NgRx is used to manage the TODO state:
   -Store:– Centralized application state
 
 The UI components remain stateless and interact with the store via dispatched actions.   
+
 
 #Design & Architecture Principles
 
